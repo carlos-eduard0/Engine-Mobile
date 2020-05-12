@@ -1,7 +1,9 @@
 import React from 'react';
-import { View, Text, ScrollView, FlatList, TouchableOpacity } from 'react-native';
+import { View, Text, ScrollView, FlatList, TouchableOpacity, Image } from 'react-native';
 import { Feather } from '@expo/vector-icons'
 import styles from './main.js';
+import lavajatoicon from '../../images/lavajato.png';
+import funilariaicon from '../../images/icon2.png';
 export default function Home() {
     return (
         <View style={styles.container}>
@@ -12,8 +14,12 @@ export default function Home() {
             </View>
             <View>
                 <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.containerTab}>
-                    <View style={styles.itemCategory}></View>
-                    <View style={styles.itemCategory}></View>
+                    <View style={styles.itemCategory}>
+                        <Image style={styles.iconCategory} source={lavajatoicon}></Image>
+                    </View>
+                    <View style={styles.itemCategory}>
+                        <Image style={styles.iconCategory} source={funilariaicon}></Image>
+                    </View>
                     <View style={styles.itemCategory}></View>
                     <View style={styles.itemCategory}></View>
                 </ScrollView>

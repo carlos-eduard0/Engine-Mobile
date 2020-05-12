@@ -31,6 +31,8 @@ export default StyleSheet.create({
         backgroundColor:'#f3f3f3',
         marginTop:30,
         marginHorizontal: 12,
+        alignItems:'center',
+        justifyContent:'center',
     },
      empresa:{
         maxWidth:360,
@@ -71,4 +73,10 @@ export default StyleSheet.create({
         fontWeight:'bold',
         color:'#2C92CD'
     },
+    iconCategory:{
+       width:100,
+       height:80,
+       resizeMode:'cover',
+     
+    }
 });
