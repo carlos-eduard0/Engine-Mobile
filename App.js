@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 
 import LoginScreen from './src/screens/Login';
@@ -12,7 +12,11 @@ firebase.initializeApp(firebaseConfig);
 
 export default class App extends React.Component {
   render() {
-    return <AppNavigator />;
+    return(
+      <>
+      <AppNavigator />
+      </>
+    ) 
   }
 }
 

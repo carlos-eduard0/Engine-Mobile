@@ -1,9 +1,11 @@
 import React from 'react';
 import { View, Text, ScrollView, FlatList, TouchableOpacity, Image } from 'react-native';
-import { Feather } from '@expo/vector-icons'
+import lavajato from '../../images/lavaJato.png';
+import mecanico from '../../images/mecanico.png';
+import gasolina from '../../images/Gasolina.png';
+import guincho from '../../images/guincho.png';
+import funilaria from '../../images/funilaria.png';
 import styles from './main.js';
-import lavajatoicon from '../../images/lavajato.png';
-import funilariaicon from '../../images/icon2.png';
 export default function Home() {
     return (
         <View style={styles.container}>
@@ -12,39 +14,61 @@ export default function Home() {
                     Categorias
                 </Text>
             </View>
-            <View>
-                <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.containerTab}>
-                    <View style={styles.itemCategory}>
-                        <Image style={styles.iconCategory} source={lavajatoicon}></Image>
-                    </View>
-                    <View style={styles.itemCategory}>
-                        <Image style={styles.iconCategory} source={funilariaicon}></Image>
-                    </View>
-                    <View style={styles.itemCategory}></View>
-                    <View style={styles.itemCategory}></View>
+            <View style={styles.containerTab}>
+                <ScrollView horizontal showsHorizontalScrollIndicator={false} >
+                    <TouchableOpacity style={styles.itemCategory}>
+                        <View style={styles.propriedadesCategory}>
+                            <Image source={lavajato} style={styles.icon}></Image>
+                            <Text style={styles.textCategory}>Lava Jato</Text>
+                        </View>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity style={styles.itemCategory}>
+                        <View style={styles.propriedadesCategory}>
+                            <Image source={mecanico} style={styles.icon}></Image>
+                            <Text style={styles.textCategory}>Mecânica</Text>
+                        </View>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity style={styles.itemCategory}>
+                        <View style={styles.propriedadesCategory}>
+                            <Image source={gasolina} style={styles.icon}></Image>
+                            <Text style={styles.textCategory}>Combustível</Text>
+                        </View>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity style={styles.itemCategory}>
+                        <View style={styles.propriedadesCategory}>
+                            <Image source={guincho} style={styles.icon}></Image>
+                            <Text style={styles.textCategory}>Guincho</Text>
+                        </View>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity style={styles.itemCategory}>
+                        <View style={styles.propriedadesCategory}>
+                            <Image source={funilaria} style={styles.icon}></Image>
+                            <Text style={styles.textCategory}>Funilaria</Text>
+                        </View>
+                    </TouchableOpacity>
                 </ScrollView>
             </View>
 
             <View style={styles.empresas}>
                 <FlatList
-                    data={[1, 2, 3, 4, 5]}
+                    data={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
                     keyExtractor={empresa => String(empresa)}
                     showsVerticalScrollIndicator={false}
                     renderItem={() => (
-                        <View style={styles.empresa}>
+                        <TouchableOpacity style={styles.empresa}>
                             <View style={styles.propriedades}>
                                 <View style={styles.logo} />
                                 <View style={styles.cardText}>
                                     <Text style={styles.nomeEmpresa}>Casa do Amortecedor</Text>
                                     <Text style={styles.tipoService}>Mecânica</Text>
-                                    <TouchableOpacity onPress={() =>{}}
-                                        style={styles.empresaButton}>
-                                        <Text style={styles.empresaButtonText}>Ver empresa</Text>
-                                        <Feather name="arrow-right" size={16} color="#2C92CD" />
-                                    </TouchableOpacity>
+
                                 </View>
                             </View>
-                        </View>
+                        </TouchableOpacity>
                     )}
                 />
             </View>

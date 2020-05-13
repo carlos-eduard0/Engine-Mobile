@@ -9,7 +9,7 @@ export default function Routes() {
     return (
         <NavigationContainer>
             <Tabs.Navigator initialRouteName="Feed" tabBarOptions={{
-                activeTintColor: '#2C92CD',
+                activeTintColor: '#3b383a',
             }}>
                 <Tabs.Screen name="Home" component={Home} options={{
                     tabBarLabel: 'Home',
