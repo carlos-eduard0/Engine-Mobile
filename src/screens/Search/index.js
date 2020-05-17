@@ -1,19 +1,28 @@
 import React from 'react';
-import { View, Text, ScrollView, FlatList, TouchableOpacity, Image } from 'react-native';
+import { View, Text, ScrollView, TouchableOpacity, TextInput, Image } from 'react-native';
 import lavajato from '../../images/lavaJato.png';
 import mecanico from '../../images/mecanico.png';
 import gasolina from '../../images/Gasolina.png';
 import guincho from '../../images/guincho.png';
 import funilaria from '../../images/funilaria.png';
 import styles from './main.js';
-export default function Home() {
+import { Feather } from '@expo/vector-icons';
+export default function Search() {
     return (
         <View style={styles.container}>
-            <View style={styles.containerTab}>
-                <View style={styles.header}>
-                    <Text style={styles.textHeader}>Categorias</Text>
-                </View>
-                <ScrollView horizontal showsHorizontalScrollIndicator={false} >
+            <View style={styles.searchForm}>
+                <TextInput style={styles.searchInput} placeholder="Buscar serviço ou empresa" placeholderTextColor="#999" autoCapitalize="words" autoCorrect={false}>
+
+                </TextInput>
+                <TouchableOpacity style={styles.loadButton}>
+                    <Feather name="search" size={20} color="#516a91" />
+                </TouchableOpacity>
+            </View>
+            <View style={styles.categorias}>
+                <ScrollView showsVerticalScrollIndicator={false} >
+                    <View style={styles.headerCategory}>
+                        <Text style={styles.headerCategoryText}>Categorias</Text>
+                    </View>
                     <TouchableOpacity style={styles.itemCategory}>
                         <View style={styles.propriedadesCategory}>
                             <Image source={lavajato} style={styles.icon}></Image>
@@ -49,30 +58,6 @@ export default function Home() {
                         </View>
                     </TouchableOpacity>
                 </ScrollView>
-            </View>
-
-            <View style={styles.empresas}>
-                <View style={styles.headerEmpresas}>
-                    <Text style={styles.textHeaderEmpresas}>
-                        Estabelecimentos
-                    </Text>
-                </View>
-                <FlatList
-                    data={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
-                    keyExtractor={empresa => String(empresa)}
-                    showsVerticalScrollIndicator={false}
-                    renderItem={() => (
-                        <TouchableOpacity style={styles.empresa}>
-                            <View style={styles.propriedades}>
-                                <View style={styles.logo} />
-                                <View style={styles.cardText}>
-                                    <Text style={styles.nomeEmpresa}>Casa do Amortecedor</Text>
-                                    <Text style={styles.tipoService}>Mecânica</Text>
-                                </View>
-                            </View>
-                        </TouchableOpacity>
-                    )}
-                />
             </View>
         </View>
     );

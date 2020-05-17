@@ -5,11 +5,13 @@ import {Feather} from '@expo/vector-icons';
 const Tabs = createBottomTabNavigator();
 import Home from './src/screens/Home';
 import Perfil from './src/screens/Perfil';
+import Search from './src/screens/Search';
 export default function Routes() {
     return (
         <NavigationContainer>
             <Tabs.Navigator initialRouteName="Feed" tabBarOptions={{
-                activeTintColor: '#3b383a',
+                activeTintColor: '#516a91',
+                keyboardHidesTabBar:'true',
             }}>
                 <Tabs.Screen name="Home" component={Home} options={{
                     tabBarLabel: 'Home',
@@ -18,7 +20,7 @@ export default function Routes() {
                     ),
                 }}
                 />
-                <Tabs.Screen name="Search" component={Perfil} options={{
+                <Tabs.Screen name="Search" component={Search} options={{
                     tabBarLabel: 'Pesquisa',
                     tabBarIcon: ({ color, size }) => (
                         <Feather name="search" color={color} size={size} />
