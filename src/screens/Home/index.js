@@ -1,12 +1,19 @@
 import React from 'react';
 import { View, Text, ScrollView, FlatList, TouchableOpacity, Image } from 'react-native';
-import lavajato from '../../images/lavaJato.png';
+import lavajato from '../../images/lavajato.png';
 import mecanico from '../../images/mecanico.png';
 import gasolina from '../../images/Gasolina.png';
 import guincho from '../../images/guincho.png';
 import funilaria from '../../images/funilaria.png';
 import styles from './main.js';
-export default function Home() {
+
+
+
+
+
+
+
+export default function Home({navigation}) {
     return (
         <View style={styles.container}>
             <View style={styles.containerTab}>
@@ -62,7 +69,7 @@ export default function Home() {
                     keyExtractor={empresa => String(empresa)}
                     showsVerticalScrollIndicator={false}
                     renderItem={() => (
-                        <TouchableOpacity style={styles.empresa}>
+                        <TouchableOpacity style={styles.empresa}  onPress={() => navigation.push("Detalhes")}>
                             <View style={styles.propriedades}>
                                 <View style={styles.logo} />
                                 <View style={styles.cardText}>

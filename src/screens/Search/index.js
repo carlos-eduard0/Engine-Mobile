@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, ScrollView, TouchableOpacity, TextInput, Image } from 'react-native';
-import lavajato from '../../images/lavaJato.png';
+import lavajato from '../../images/lavajato.png';
 import mecanico from '../../images/mecanico.png';
 import gasolina from '../../images/Gasolina.png';
 import guincho from '../../images/guincho.png';
