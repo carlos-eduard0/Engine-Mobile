@@ -7,12 +7,6 @@ import guincho from '../../images/guincho.png';
 import funilaria from '../../images/funilaria.png';
 import styles from './main.js';
 
-
-
-
-
-
-
 export default function Home({navigation}) {
     return (
         <View style={styles.container}>
