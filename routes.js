@@ -11,7 +11,7 @@ import Detalhes from './src/screens/Detalhes';
 const Tabs = createBottomTabNavigator();
 const HomeStack = createStackNavigator();
 const SearchStack = createStackNavigator();
-// ok
+
 function HomeStackScreen() {
     return (
         <HomeStack.Navigator screenOptions={{ headerShown: false }}>

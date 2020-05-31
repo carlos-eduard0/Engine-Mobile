@@ -1,69 +1,157 @@
-import {StyleSheet} from 'react-native';
+import { StyleSheet } from 'react-native';
 import Constants from 'expo-constants';
+
 export default StyleSheet.create({
     container: {
-        flex:1,
-        backgroundColor:'#516a91',
-        paddingTop: Constants.statusBarHeight + 20,
+        flex: 1,
+        backgroundColor: '#ffff',
+        paddingTop: Constants.statusBarHeight,
+        
     },
-    header:{
-        marginLeft:15,
-    },  
-    textHeader:{
-        color:"#ffff",
-        fontSize:18,
-        fontWeight:'700'
-    },
-    headerEmpresas:{
-        marginTop:15,
-        marginBottom:10,
-        position:'relative',
-        right:100
-    },
-    textHeaderEmpresas:{
-        color:"#999",
-        fontSize:16,
-        fontWeight:'700'
-    },
-    containerTab:{
-        height:150
-    },
-    itemCategory:{
-        width:190,
-        height:70,
-        backgroundColor:'#ffff',
-        borderRadius:5,
-        marginTop:20,
-        marginHorizontal:15,
-        justifyContent:'center',
-        alignItems:'center'
-    },
-    empresas:{
-        flex:4.5,
-        alignItems:"center",
-        backgroundColor:'#ffff',
-        // borderTopLeftRadius: 12,
-        // borderTopRightRadius: 12,
-    },
-    empresa:{
-        width:340,
-        height:100,
-        borderRadius:5,
-        backgroundColor:'#f2f2f2',
-        marginVertical: 15,
-        justifyContent:'center'
-    },
+    header: {
+        flexDirection: "row",
+        marginHorizontal: 30,
+        justifyContent: "space-between",
+        shadowColor:"#000",
+        shadowOpacity:0.2,
+        shadowOffset:{
+            width:4,
+            height:2,
+        },
+        elevation:8,
 
-    propriedades:{
-      flexDirection:'row',
     },
-    propriedadesCategory:{
-        flexDirection:'row',
-        alignItems:'center',
-        marginHorizontal:10
-      },
+    textHeader: {
+        fontFamily: "Baloo Thambi 2 Bold",
+        overflow: "visible",
+        color: "#019ece",
+        fontSize: 37,
+        letterSpacing: 0,
+    },
+    icon: {
+        width: 50,
+        height: 50,
+        borderRadius: 25,
+        backgroundColor: "#EBEBEB",
+    },
+    categorias: {
+        marginTop: 30,
+    },
+    lavajato: {
+        width: 209,
+        height: 170,
+        overflow: "visible",
+        borderRadius: 20,
+        backgroundColor: "#1b9dbe",
+        marginLeft: 20,
+    },
+    mecanica: {
+        width: 209,
+        height: 170,
+        overflow: "visible",
+        borderRadius: 20,
+        backgroundColor: "#019ece",
+        marginHorizontal: 20
+    },
+    funilaria: {
+        width: 209,
+        height: 170,
+        overflow: "visible",
+        borderRadius: 20,
+        backgroundColor: "#0e99cf",
+
+    },
+    gasolina: {
+        width: 209,
+        height: 170,
+        overflow: "visible",
+        borderRadius: 20,
+        backgroundColor: "#1cabcd",
+        marginHorizontal: 20
+    },
+    borracharia: {
+        width: 209,
+        height: 170,
+        overflow: "visible",
+        borderRadius: 20,
+        backgroundColor: "#38aedd",
+    },
+    guaragem: {
+        width: 209,
+        height: 170,
+        overflow: "visible",
+        borderRadius: 20,
+        backgroundColor: "#4ab3e7",
+        marginHorizontal: 20
+    },
+    acess: {
+        width: 209,
+        height: 170,
+        overflow: "visible",
+        borderRadius: 20,
+        backgroundColor: "#349ebf",
+    },
+    guincho: {
+        width: 209,
+        height: 170,
+        overflow: "visible",
+        borderRadius: 20,
+        backgroundColor: "#32a5c0",
+        marginHorizontal: 20
+    },
+    agendamento: {
+        width: 209,
+        height: 170,
+        overflow: "visible",
+        borderRadius: 20,
+        backgroundColor: "#30adc1",
+        marginRight: 20
+    },
+    propriedadesCategory: {
+        justifyContent: "center",
+        alignItems: "center",
+    },
+    iconCategory: {
+        width: 110,
+        height: 110,
+
+    },
+    textIcon: {
+        marginTop: 5,
+        color: "#ffff",
+        fontFamily: "Baloo Thambi 2 Bold",
+        fontSize: 18
+    },
+    empresas: {
+        marginHorizontal: 20,
+        marginTop: 40,
+    },
+    textEmpresas: {
+        fontFamily: "Baloo Thambi 2 Bold",
+        overflow: "visible",
+        color: "#434546",
+        fontSize: 18,
+        letterSpacing: 0,
+    },
+    itemEmpresa: {
+        backgroundColor: 'red',
+        width: 50,
+        height: 80,
+    },
+    empresa: {
+        width: 350,
+        height: 100,
+        borderRadius: 5,
+        borderColor:"#f3f3f3",
+        borderWidth:1,
+        marginVertical: 15,
+        justifyContent: 'center'
+    },
+    infos: {
+        flexDirection: 'row',
+    },
     logo:{
-        backgroundColor:'#FFFFFF',
+        backgroundColor:'#F7F7F7',
         width:60,
         height:60,
         marginLeft:15,
@@ -80,26 +168,5 @@ export default StyleSheet.create({
     tipoService:{
         color:'#9c9c9c',
     },
-    empresaButton:{
-        position:'relative',
-        top:20,
-        flexDirection:'row',
-        alignItems:'center',
-    },
-    empresaButtonText:{
-        marginRight:5,
-        fontWeight:'bold',
-        color:'#2C92CD'
-    },
-    icon:{
-        width:50,
-        height:50,
-        marginRight:15
-    },
-    textCategory:{
-        fontWeight:'bold',
-        fontSize:17,
-        color:'#5e5e5e'
-    },
+
 })
-  
