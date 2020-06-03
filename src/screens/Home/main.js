@@ -12,13 +12,7 @@ export default StyleSheet.create({
         flexDirection: "row",
         marginHorizontal: 30,
         justifyContent: "space-between",
-        shadowColor:"#000",
-        shadowOpacity:0.2,
-        shadowOffset:{
-            width:4,
-            height:2,
-        },
-        elevation:8,
+       
 
     },
     textHeader: {

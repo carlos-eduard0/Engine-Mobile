@@ -16,7 +16,8 @@ export default class App extends React.Component {
   };
   async componentDidMount() {
     await Font.loadAsync({
-      'Baloo Thambi 2 Bold': require('./assets/fonts/BalooThambi2Bold.ttf')
+      'Baloo Thambi 2 Bold': require('./assets/fonts/BalooThambi2Bold.ttf'),
+      'Baloo Thambi 2 Regular': require('./assets/fonts/BalooThambi2Regular.ttf')
     });
     this.setState({ assetsLoaded: true });
   }

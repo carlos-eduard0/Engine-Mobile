@@ -20,7 +20,7 @@ export default function Home({ navigation }) {
                 <Text style={styles.textHeader}>Engine</Text>
                 <Image source={avatar} style={styles.icon}></Image>
             </View>
-            <ScrollView showsVerticalScrollIndicator={false}>
+            <ScrollView showsVerticalScrollIndicator={false} style={styles.tudo}>
                 <View style={styles.categorias}>
                     <ScrollView horizontal showsHorizontalScrollIndicator={false} >
                         <TouchableOpacity style={styles.lavajato} disabled={true}>
