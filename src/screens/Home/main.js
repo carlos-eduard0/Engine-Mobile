@@ -1,166 +1,206 @@
 import { StyleSheet } from 'react-native';
 import Constants from 'expo-constants';
 
+
 export default StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#ffff',
-        paddingTop: Constants.statusBarHeight,
-        
-    },
-    header: {
-        flexDirection: "row",
-        marginHorizontal: 30,
-        justifyContent: "space-between",
-       
+        backgroundColor: '#70A5FF',
 
     },
-    textHeader: {
-        fontFamily: "Baloo Thambi 2 Bold",
-        overflow: "visible",
-        color: "#019ece",
-        fontSize: 37,
-        letterSpacing: 0,
+    gradiente: {
+        left: 0,
+        right: 0,
+        top: 0,
     },
-    icon: {
+    header: {
+        marginHorizontal: 25,
+        flexDirection: 'row',
+        justifyContent: "space-between",
+
+    },
+    introHeader: {
+        justifyContent: 'center',
+        height: 179,
+        marginLeft: 8
+    },
+    textIntro: {
+        color: '#ffff',
+        fontSize: 33,
+        fontFamily: 'Quicksand Regular',
+        letterSpacing: 0,
+        fontStyle: "normal",
+    },
+    textSpan: {
+        color: '#ffff',
+        fontSize: 30,
+        fontFamily: 'Quicksand Bold',
+        letterSpacing: 0,
+        fontStyle: "normal",
+        marginTop: 2,
+    },
+    avatarPerfil: {
         width: 50,
         height: 50,
         borderRadius: 25,
-        backgroundColor: "#EBEBEB",
+        backgroundColor: "#ffff",
+        marginTop: 25,
+        alignItems: "center",
+        justifyContent: "center",
+    },
+    content: {
+        
+        backgroundColor: "#F5F5F5",
+        borderTopLeftRadius: 33,
+    },
+    headerContent: {
+        marginTop: 30,
+        marginLeft: 40
+    },
+    titleHeaderContent: {
+        fontFamily: "Baloo Thambi 2 Bold",
+        color: "rgba(0, 0, 0, 0.63)",
+        fontSize: 23,
+        fontStyle: "normal",
+        letterSpacing: 0,
+        overflow: "visible",
     },
     categorias: {
-        marginTop: 30,
+        marginTop: 20,
+        alignItems: "center"
     },
-    lavajato: {
-        width: 209,
-        height: 170,
+    categoriaMec: {
+        width: 87,
+        height: 90,
         overflow: "visible",
+        backgroundColor: "#fcfcfc",
         borderRadius: 20,
-        backgroundColor: "#1b9dbe",
-        marginLeft: 20,
+        marginHorizontal: 28,
     },
-    mecanica: {
-        width: 209,
-        height: 170,
+    categoriaAcess: {
+        width: 87,
+        height: 90,
         overflow: "visible",
+        backgroundColor: "#fcfcfc",
         borderRadius: 20,
-        backgroundColor: "#019ece",
-        marginHorizontal: 20
     },
-    funilaria: {
-        width: 209,
-        height: 170,
+    categoriaBorracharia: {
+        width: 87,
+        height: 90,
         overflow: "visible",
+        backgroundColor: "#fcfcfc",
         borderRadius: 20,
-        backgroundColor: "#0e99cf",
-
+        marginHorizontal: 28,
     },
-    gasolina: {
-        width: 209,
-        height: 170,
+    categoriaFunil: {
+        width: 87,
+        height: 90,
         overflow: "visible",
+        backgroundColor: "#fcfcfc",
         borderRadius: 20,
-        backgroundColor: "#1cabcd",
-        marginHorizontal: 20
     },
-    borracharia: {
-        width: 209,
-        height: 170,
+    categoriaLavaJato: {
+        width: 87,
+        height: 90,
         overflow: "visible",
+        backgroundColor: "#fcfcfc",
         borderRadius: 20,
-        backgroundColor: "#38aedd",
+        marginHorizontal: 28,
     },
-    guaragem: {
-        width: 209,
-        height: 170,
+    categoriaCombustivel: {
+        width: 87,
+        height: 90,
         overflow: "visible",
+        backgroundColor: "#fcfcfc",
         borderRadius: 20,
-        backgroundColor: "#4ab3e7",
-        marginHorizontal: 20
     },
-    acess: {
-        width: 209,
-        height: 170,
+    categoriaGuaragem: {
+        width: 87,
+        height: 90,
         overflow: "visible",
+        backgroundColor: "#fcfcfc",
         borderRadius: 20,
-        backgroundColor: "#349ebf",
+        marginHorizontal: 28,
     },
-    guincho: {
-        width: 209,
-        height: 170,
+    categoriaGuincho: {
+        width: 87,
+        height: 90,
         overflow: "visible",
+        backgroundColor: "#fcfcfc",
         borderRadius: 20,
-        backgroundColor: "#32a5c0",
-        marginHorizontal: 20
     },
-    agendamento: {
-        width: 209,
-        height: 170,
+    categoriaAgendamento: {
+        width: 87,
+        height: 90,
         overflow: "visible",
+        backgroundColor: "#fcfcfc",
         borderRadius: 20,
-        backgroundColor: "#30adc1",
-        marginRight: 20
+        marginHorizontal: 28,
     },
-    propriedadesCategory: {
-        justifyContent: "center",
+    company: {
+        marginTop: 15,
         alignItems: "center",
     },
-    iconCategory: {
-        width: 110,
+    touchCompany: {
+        width: 332,
         height: 110,
-
-    },
-    textIcon: {
-        marginTop: 5,
-        color: "#ffff",
-        fontFamily: "Baloo Thambi 2 Bold",
-        fontSize: 18
-    },
-    empresas: {
-        marginHorizontal: 20,
-        marginTop: 40,
-    },
-    textEmpresas: {
-        fontFamily: "Baloo Thambi 2 Bold",
-        overflow: "visible",
-        color: "#434546",
-        fontSize: 18,
-        letterSpacing: 0,
-    },
-    itemEmpresa: {
-        backgroundColor: 'red',
-        width: 50,
-        height: 80,
-    },
-    empresa: {
-        width: 350,
-        height: 100,
-        borderRadius: 5,
-        borderColor:"#f3f3f3",
-        borderWidth:1,
+        backgroundColor: "#FCFCFC",
+        borderRadius: 14,
+        paddingHorizontal: 8,
+        justifyContent: "center",
         marginVertical: 15,
-        justifyContent: 'center'
     },
-    infos: {
-        flexDirection: 'row',
+    infoCompany: {
+        flexDirection: "row",
     },
-    logo:{
-        backgroundColor:'#F7F7F7',
-        width:60,
-        height:60,
-        marginLeft:15,
-        borderRadius:90,
+    logoCompany: {
+        width: 75,
+        height: 75,
+        borderRadius: 18,
+        backgroundColor: "rgba(235, 235, 235, 0.5)",
     },
-    cardText:{
-        marginLeft: 30,
+    headerCardCompany: {
+        marginLeft: 15
     },
-    nomeEmpresa:{
-        fontWeight: 'bold',
-        color:'#484a47',
-        fontSize: 15,
+    titleHeaderCompany: {
+        color: "#595959",
+        fontFamily: 'Quicksand Bold',
+        fontStyle: "normal",
+        fontSize: 16,
     },
-    tipoService:{
-        color:'#9c9c9c',
+    spanCompany: {
+        color: "#8c8c8c",
+        fontFamily: 'Quicksand Regular',
+        height: 28
     },
+    infoExtra: {
+        flexDirection: "row",
+        justifyContent: "space-around",
+        alignItems: "center",
+    },
+    iconStar: {
+        alignItems: "center",
+        flexDirection: "row",
+    },
+    textStar: {
+        color: "#595959",
+        fontFamily: 'Baloo Thambi 2 Bold',
+        fontStyle: "normal",
+        fontSize: 14,
+        marginHorizontal: 5
+    },
+    iconClock: {
+        alignItems: "center",
+        flexDirection: "row",
+        marginLeft: 20,
+    },
+    textClock: {
+        color: "#595959",
+        fontFamily: 'Baloo Thambi 2 Bold',
+        fontStyle: "normal",
+        fontSize: 14,
+        marginLeft: 5
+    },
+
 
 })

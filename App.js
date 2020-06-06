@@ -17,14 +17,16 @@ export default class App extends React.Component {
   async componentDidMount() {
     await Font.loadAsync({
       'Baloo Thambi 2 Bold': require('./assets/fonts/BalooThambi2Bold.ttf'),
-      'Baloo Thambi 2 Regular': require('./assets/fonts/BalooThambi2Regular.ttf')
+      'Baloo Thambi 2 Regular': require('./assets/fonts/BalooThambi2Regular.ttf'),
+      'Quicksand Regular': require('./assets/fonts/QuicksandRegular.ttf'),
+      'Quicksand Bold': require('./assets/fonts/QuicksandBold.ttf'),
     });
     this.setState({ assetsLoaded: true });
   }
   render() {
     return (
       <>
-        <StatusBar barStyle="dark-content" backgroundColor="#ffff"></StatusBar>
+        <StatusBar barStyle="light-content" backgroundColor="#75cdff"></StatusBar>
         <AppNavigator />
       </>
     )
