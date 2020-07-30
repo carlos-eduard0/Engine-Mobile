@@ -1,75 +1,138 @@
-import React from 'react';
-import { View, Text, TouchableOpacity,ScrollView } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { View, SafeAreaView, FlatList, Text, ScrollView, TouchableOpacity, TouchableHighlight, Animated } from 'react-native';
+import api from '../../services/api';
+
+
 import styles from './main.js';
 import { AntDesign } from '@expo/vector-icons';
-export default function Detalhes() {
+import { Feather } from '@expo/vector-icons';
+import { FontAwesome } from '@expo/vector-icons';
+
+
+export default function Detalhes({ navigation, route }) {
+
+    const [scrollY, setScrollY] = useState(new Animated.Value(0));
+    const [services, setServices] = useState([]);
+    const [categoria, setCategoria] = useState('n');
+    const [empresa, setEmpresa] = useState({nomeFantasia:''});
+
+    const {id} = route.params.id;
+    const {id_empresa} = route.params;
+
+    useEffect(() => {
+        api.post('/empresa/get', {
+            id: id_empresa
+        })
+        .then(response => {
+            setEmpresa(response.data.empresa);
+        })
+    }, []);
+
+
+
+    async function loadServices(categoria){
+
+        const response = await api.get('/servicos/empresa', {
+            headers:{
+                id_empresa:id_empresa
+            }
+        });
+
+        setServices(response.data.servicos);
+    }
+
+    useEffect(() => {
+        loadServices(categoria);
+    }, [categoria]);
+
+
     return (
-        <ScrollView showsVerticalScrollIndicator={false} >
-            <View style={styles.container}>
-                <View style={styles.perfil}>
-                    <View style={styles.logoEmpresa}>
+        <SafeAreaView style={styles.container}>
+            
+                <Animated.View style={[styles.header, {
+                    height: scrollY.interpolate({
+                        inputRange: [150,150],
+                        outputRange: [180,0],
+                        extrapolate: "clamp",
+                    }),
+                     opacity: scrollY.interpolate({
+                         inputRange: [1, 75, 170],
+                         outputRange: [1, 1, 0],
+                         extrapolate: "clamp",
+                    })
+                }]}>
+                    <View style={styles.avatarPerfil}>
+                        <Feather name="user" size={24} color="#70A5FF" />
                     </View>
-                    <View style={styles.infos}>
-                        <Text style={styles.nomeEmpresa}>Casa do Amortecedor</Text>
-                        <View style={styles.star}>
-                            <Text style={styles.categoria}>Mecânica</Text>
-                            <AntDesign style={styles.icon} name="star" size={24} color="#FFD765">
-                                <Text style={styles.numberStar}>5,0</Text>
-                            </AntDesign>
-                        </View>
+                    <View style={styles.introHeader}>
+                        <Text style={styles.textIntro}>{empresa.nomeFantasia}</Text>
+                        <Text style={styles.textSpan}>{empresa.segmento}</Text>
+                    </View>
+
+                </Animated.View>
+          
+            <ScrollView style={styles.content} showsVerticalScrollIndicator={false} onScroll={Animated.event([{
+                nativeEvent: {
+                    contentOffset: { y: scrollY }
+                },
+            }],
+                { useNativeDriver: false })}>
+                <View>
+                    <View style={styles.headerContent}>
+                        <Text style={styles.titleHeaderContent}>Serviços</Text>
+                    </View>
+
+                    <View style={styles.company}>
+                        <FlatList
+                            data={services}
+                            keyExtractor={service => String(service.id)}
+                            extraData={categoria}
+                            showsVerticalScrollIndicator={false}
+                            renderItem={({item: service}) => (
+                                <TouchableOpacity style={styles.touchCompany}>
+                                    <View style={styles.infoCompany}>
+                                        <View style={styles.headerCardCompany}>
+                                            <Text style={styles.titleHeaderCompany}>{service.nome_servico}</Text>
+                                            <Text style={styles.spanCompany}>{service.descricao}</Text>
+                                            <View style={styles.infoExtra}>
+                                                <Text style={styles.textStar}>R$ 5,00</Text>
+                                            </View>
+                                        </View>
+                                    </View>
+                                </TouchableOpacity>
+                            )}
+                        />
                     </View>
                 </View>
 
-                <View style={styles.services}>
-                    <View style={styles.headerServices}>
-                        <Text style={styles.txtHeader}>Serviços</Text>
+                <View>                
+                    <View style={styles.headerContent}>
+                        <Text style={styles.titleHeaderContent}>Produtos</Text>
                     </View>
-                    <TouchableOpacity style={styles.itemService}>
-                        <View style={styles.tituloService}>
-                            <Text style={styles.tituloServiceText}>Amortecedor da casa</Text>
-                        </View>
-                        <View style={styles.desc}>
-                            <Text style={styles.descText}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. At elementum eu facilisis sed.</Text>
-                        </View>
-                        <View style={styles.valor}>
-                            <Text style={styles.valorText}>R$ 120,00</Text>
-                        </View>
-                    </TouchableOpacity>
-                    <TouchableOpacity style={styles.itemService}>
-                        <View style={styles.tituloService}>
-                            <Text style={styles.tituloServiceText}>Amortecedor da casa</Text>
-                        </View>
-                        <View style={styles.desc}>
-                            <Text style={styles.descText}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. At elementum eu facilisis sed.</Text>
-                        </View>
-                        <View style={styles.valor}>
-                            <Text style={styles.valorText}>R$ 120,00</Text>
-                        </View>
-                    </TouchableOpacity>
-                    <TouchableOpacity style={styles.itemService}>
-                        <View style={styles.tituloService}>
-                            <Text style={styles.tituloServiceText}>Amortecedor da casa</Text>
-                        </View>
-                        <View style={styles.desc}>
-                            <Text style={styles.descText}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. At elementum eu facilisis sed.</Text>
-                        </View>
-                        <View style={styles.valor}>
-                            <Text style={styles.valorText}>R$ 120,00</Text>
-                        </View>
-                    </TouchableOpacity>
-                    <TouchableOpacity style={styles.itemService}>
-                        <View style={styles.tituloService}>
-                            <Text style={styles.tituloServiceText}>Amortecedor da casa</Text>
-                        </View>
-                        <View style={styles.desc}>
-                            <Text style={styles.descText}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. At elementum eu facilisis sed.</Text>
-                        </View>
-                        <View style={styles.valor}>
-                            <Text style={styles.valorText}>R$ 120,00</Text>
-                        </View>
-                    </TouchableOpacity>
-                </View>
-            </View>
-        </ScrollView>
-    )
+
+                    <View style={styles.company}>
+                        <FlatList
+                            data={services}
+                            keyExtractor={service => String(service.id)}
+                            extraData={categoria}
+                            showsVerticalScrollIndicator={false}
+                            renderItem={({item: service}) => (
+                                <TouchableOpacity style={styles.touchCompany}>
+                                    <View style={styles.infoCompany}>
+                                        <View style={styles.headerCardCompany}>
+                                            <Text style={styles.titleHeaderCompany}>{service.nome_servico}</Text>
+                                            <Text style={styles.spanCompany}>{service.descricao}</Text>
+                                            <View style={styles.infoExtra}>
+                                                <Text style={styles.textStar}>R$ 5,00</Text>
+                                            </View>
+                                        </View>
+                                    </View>
+                                </TouchableOpacity>
+                            )}
+                        />
+                    </View>
+                </View>                
+            </ScrollView>
+        </SafeAreaView>
+    );
 }

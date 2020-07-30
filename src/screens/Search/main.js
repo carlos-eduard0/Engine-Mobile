@@ -71,5 +71,41 @@ export default StyleSheet.create({
         fontWeight:'700',
         fontSize:18,
         color:'#5e5e5e',
+    },
+     company: {
+        marginTop: 15,
+        alignItems: "center",
+    },
+    touchCompany: {
+        width: 332,
+        height: 110,
+        backgroundColor: "#FCFCFC",
+        borderRadius: 14,
+        paddingHorizontal: 8,
+        justifyContent: "center",
+        marginVertical: 15,
+    },
+    infoCompany: {
+        flexDirection: "row",
+    },
+    logoCompany: {
+        width: 75,
+        height: 75,
+        borderRadius: 18,
+        backgroundColor: "rgba(235, 235, 235, 0.5)",
+    },
+    headerCardCompany: {
+        marginLeft: 15
+    },
+    titleHeaderCompany: {
+        color: "#595959",
+        fontFamily: 'Quicksand Bold',
+        fontStyle: "normal",
+        fontSize: 16,
+    },
+    spanCompany: {
+        color: "#8c8c8c",
+        fontFamily: 'Quicksand Regular',
+        height: 28
     }
 });

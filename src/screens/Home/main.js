@@ -6,7 +6,6 @@ export default StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#70A5FF',
-
     },
     gradiente: {
         left: 0,
